@@ -1,4 +1,3 @@
-const { timeStamp } = require('console');
 const Discord = require('discord.js');
 const client = new Discord.Client()
 require('dotenv').config()
@@ -38,7 +37,7 @@ client.on('messageDelete', (message) => {
 
   var data =  `**${message.author.username}** \`deleted in\` **${message.channel.name}**\n
   ${message}`
-  fs.appendFileSync('snipe.txt',`[${data}]`, 'utf8');
+  
   const channel = client.channels.cache.get('846286266936983552')
   const embed = new Discord.MessageEmbed()
   .setDescription(data)
