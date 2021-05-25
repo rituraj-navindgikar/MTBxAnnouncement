@@ -1,10 +1,11 @@
 const { timeStamp } = require('console');
 const Discord = require('discord.js');
 const client = new Discord.Client()
-
+require('dotenv').config()
 const PREFIX = '!'
 client.commands =new Discord.Collection(); 
-const fs = require('fs')
+const fs = require('fs');
+const { config } = require('process');
 client.on('ready', () => {
     console.log(client.user.username + ' is online!')
 const viewing = 'Only For Mass Dm!!!!!'
@@ -45,5 +46,5 @@ client.on('messageDelete', (message) => {
   channel.send(embed)
 })
 
-client.login('ODQ1Njk5MjMwODA2MTc5ODYw.YKkwyA.oK-4vQVddaaeHVSXk-A_C5Vb7AE');
+client.login(process.env.DJS_TOKEN);
 
