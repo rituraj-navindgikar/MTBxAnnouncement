@@ -4,7 +4,7 @@ module.exports = {
     name:'dm',
    execute(message,args,PREFIX,client,Discord){
 
-      if(!message.member.hasPermission('ADMINISTRATOR'))return;
+      if(!message.member.hasPermission('MANAGE_GUILD'))return;
 
       const context = args.slice(1).join(" ")
       if(!context) return message.channel.send('Type a message to send')
