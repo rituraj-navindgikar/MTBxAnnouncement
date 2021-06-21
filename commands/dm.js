@@ -22,8 +22,7 @@ module.exports = {
 console.log(membersArray.length + ' have the mentioned role.')
 
      if(membersArray.length > 410) return message.channel.send("Mentioned role has more than 400 members");
-     message.channel.send(`${membersArray.length} have that role,
-     i will post a message again when finished with sending dm's`)
+     message.channel.send(`${membersArray.length} have that role, i will post a message again when finished with sending dm's`)
 
 
 const total_with_role = membersArray.length
@@ -45,5 +44,5 @@ const total_with_role = membersArray.length
               message.channel.send(`Sent your message successfully
                 \`Total with that role :\` ${total_with_role}`)
           }
-      }, 10000);
+      }, 15000);
     }}

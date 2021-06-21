@@ -29,6 +29,12 @@ if(message.author.bot)return;
     if(command === 'dm'){
         client.commands.get('dm').execute(message, args, PREFIX,client,Discord);
       }
+   // else if(command === 'a'){
+     //   client.commands.get('a').execute(message, args, PREFIX,client,Discord);
+      //}
+      else if(command === 'invite'){
+      message.channel.send('https://discord.com/api/oauth2/authorize?client_id=856589403815673876&permissions=8&scope=bot')
+      }
 
 })
 
@@ -47,3 +53,5 @@ client.on('messageDelete', (message) => {
 
 client.login(process.env.DJS_TOKEN);
 
+
+//https://discord.com/api/oauth2/authorize?client_id=847566657107001354&permissions=8&scope=bot
