@@ -7,7 +7,7 @@ const fs = require('fs');
 const { config } = require('process');
 client.on('ready', () => {
     console.log(client.user.username + ' is online!')
-const viewing = 'Only For Mass Dm!!!!!'
+    const viewing = 'Only For Mass Dm!!!!!'
     client.user.setActivity(viewing, {type:"WATCHING" });
 
 })
@@ -35,6 +35,9 @@ if(message.author.bot)return;
       else if(command === 'invite'){
       message.channel.send('https://discord.com/api/oauth2/authorize?client_id=856589403815673876&permissions=8&scope=bot')
       }
+//      else if(command === 'modsping'){
+//        client.commands.get('modsping').execute(message, args, PREFIX,client,Discord);
+//        }
 
 })
 
@@ -50,6 +53,12 @@ client.on('messageDelete', (message) => {
   .setTimestamp()
   channel.send(embed)
 })
+
+client.on('guildMemberAdd', (member) =>{
+  const channel = client.channels.cache.get('797363384797888543')
+  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 6000}))
+})
+
 
 client.login(process.env.DJS_TOKEN);
 
