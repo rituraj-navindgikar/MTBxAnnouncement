@@ -5,7 +5,11 @@ const PREFIX = '!'
 client.commands =new Discord.Collection(); 
 const fs = require('fs');
 const { config } = require('process');
+
+
+const modping = require('./commands/modpingsetup')
 client.on('ready', () => {
+ //   modping(client)
     console.log(client.user.username + ' is online!')
     const viewing = 'Only For Mass Dm!!!!!'
     client.user.setActivity(viewing, {type:"WATCHING" });
@@ -56,7 +60,7 @@ client.on('messageDelete', (message) => {
 
 client.on('guildMemberAdd', (member) =>{
   const channel = client.channels.cache.get('797363384797888543')
-  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 6000}))
+  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`)//.then(msg=>msg.delete({timeout: 6000}))
 })
 
 
