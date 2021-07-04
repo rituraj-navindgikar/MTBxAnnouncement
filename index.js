@@ -4,18 +4,18 @@ require('dotenv').config()
 const PREFIX = '!'
 client.commands =new Discord.Collection(); 
 const fs = require('fs');
+const ms = require('ms');
 const { config } = require('process');
 
-
-const modping = require('./commands/modpingsetup')
 client.on('ready', () => {
- //   modping(client)
+
     console.log(client.user.username + ' is online!')
+
     const viewing = 'Only For Mass Dm!!!!!'
     client.user.setActivity(viewing, {type:"WATCHING" });
+    
 
 })
-
 const commandsFiles1 = fs.readdirSync('./commands/').filter(file => file.endsWith('js'));
 for(const file of commandsFiles1)
 {
@@ -39,9 +39,6 @@ if(message.author.bot)return;
       else if(command === 'invite'){
       message.channel.send('https://discord.com/api/oauth2/authorize?client_id=856589403815673876&permissions=8&scope=bot')
       }
-//      else if(command === 'modsping'){
-//        client.commands.get('modsping').execute(message, args, PREFIX,client,Discord);
-//        }
 
 })
 
@@ -60,7 +57,7 @@ client.on('messageDelete', (message) => {
 
 client.on('guildMemberAdd', (member) =>{
   const channel = client.channels.cache.get('797363384797888543')
-  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`)//.then(msg=>msg.delete({timeout: 6000}))
+  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
 })
 
 
