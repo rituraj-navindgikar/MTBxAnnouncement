@@ -52,6 +52,7 @@ client.on('messageDelete', (message) => {
   const embed = new Discord.MessageEmbed()
   .setDescription(data)
   .setTimestamp()
+  .setFooter(message.author.id)
   channel.send(embed)
 })
 
