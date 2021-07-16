@@ -11,10 +11,8 @@ client.on('ready', () => {
 
     console.log(client.user.username + ' is online!')
 
-    const viewing = 'Only For Mass Dm!!!!!'
+    const viewing = 'Now Version 0.1.6'
     client.user.setActivity(viewing, {type:"WATCHING" });
-    
-
 })
 const commandsFiles1 = fs.readdirSync('./commands/').filter(file => file.endsWith('js'));
 for(const file of commandsFiles1)
@@ -37,7 +35,7 @@ if(message.author.bot)return;
      //   client.commands.get('a').execute(message, args, PREFIX,client,Discord);
       //}
       else if(command === 'invite'){
-      message.channel.send('https://discord.com/api/oauth2/authorize?client_id=856589403815673876&permissions=8&scope=bot')
+      message.channel.send('https://discord.com/api/oauth2/authorize?client_id=865666916311367690&permissions=8&scope=bot')
       }
 
 })
@@ -56,9 +54,9 @@ client.on('messageDelete', (message) => {
   channel.send(embed)
 })
 
-client.on('guildMemberAdd', (member) =>{
+client.on('guildMemberAdd', async(member) =>{
   const channel = client.channels.cache.get('797363384797888543')
-  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
+  await channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
 })
 
 
