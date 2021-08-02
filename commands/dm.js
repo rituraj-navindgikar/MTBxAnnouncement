@@ -5,7 +5,7 @@ module.exports = {
    execute(message,args,PREFIX,client,Discord){
 
       if(!message.member.hasPermission('MANAGE_GUILD'))return;
-
+     cont time = [10000, 40000, 13000, 3000, 43500, 15000, 7000, 2000, 24000]
       const context = args.slice(1).join(" ")
       if(!context) return message.channel.send('Type a message to send')
 
@@ -45,5 +45,5 @@ const total_with_role = membersArray.length
               clearInterval(interval);
               message.channel.send(`Sent your message successfully`)
           }
-      }, 10000);
+      }, 30000);
     }}
