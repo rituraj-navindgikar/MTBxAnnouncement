@@ -54,10 +54,10 @@ client.on('messageDelete', (message) => {
   channel.send(embed)
 })
 
-client.on('guildMemberAdd', async(member) =>{
-  const channel = client.channels.cache.get('797363384797888543');
-  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
-})
+//client.on('guildMemberAdd', async(member) =>{
+//  const channel = client.channels.cache.get('797363384797888543');
+//  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
+//})
 
 
 client.login(process.env.DJS_TOKEN);
