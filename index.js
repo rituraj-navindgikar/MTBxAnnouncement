@@ -55,8 +55,8 @@ client.on('messageDelete', (message) => {
 })
 
 client.on('guildMemberAdd', async(member) =>{
-  const channel = client.channels.cache.get('797363384797888543')
-  await channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
+  const channel = client.channels.cache.get('797363384797888543');
+  channel.send(`Welcome To Metal Blood Esports! ${member} Here take your self role by reacting`).then(msg=>msg.delete({timeout: 10000}))
 })
 
 
