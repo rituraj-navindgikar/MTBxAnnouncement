@@ -45,5 +45,5 @@ const total_with_role = membersArray.length
               clearInterval(interval);
               message.channel.send(`Sent your message successfully`)
           }
-      }, 10000);
+      }, 7000);
     }}
