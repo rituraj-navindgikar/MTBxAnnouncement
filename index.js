@@ -27,8 +27,9 @@ client.on('message', async message => {
 if(message.author.bot)return;
     const args = message.content.slice(PREFIX.length).split(/ +/);                   
     const command = args.shift().toLowerCase()  
-if(message.content.includes(`member <@711837685739946004> not received`)){
-message.delete({timeout:10})
+
+if(message.content.startsWith(`member <@711837685739946004> not received`)){
+message.delete({timeout:100})
 console.log("done")
  }
 
