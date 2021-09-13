@@ -36,13 +36,6 @@ if(message.author.bot)return;
       else if(command === 'invite'){
       message.channel.send('https://discord.com/api/oauth2/authorize?client_id=865666916311367690&permissions=8&scope=bot')
       }
-
-})
-client.on('message', async(message) => {
-if(message.type == 'dm') return;
-if(message.content.startsWith(`member <@711837685739946004> not received`)){
-message.delete({timeout:100})
-}
 })
 
 client.on('messageDelete', (message) => {
