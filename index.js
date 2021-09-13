@@ -26,7 +26,10 @@ client.on('message', async message => {
   if(!message.content.startsWith(PREFIX)) return;
 if(message.author.bot)return;
     const args = message.content.slice(PREFIX.length).split(/ +/);                   
-    const command = args.shift().toLowerCase()
+    const command = args.shift().toLowerCase()  
+if(message.content == `member <@711837685739946004> not received`){
+message.delete({timeout:10})
+ }
 
     if(command === 'dm'){
         client.commands.get('dm').execute(message, args, PREFIX,client,Discord);
