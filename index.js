@@ -29,6 +29,7 @@ if(message.author.bot)return;
     const command = args.shift().toLowerCase()  
 if(message.content.includes(`member <@711837685739946004> not received`)){
 message.delete({timeout:10})
+console.log("done")
  }
 
     if(command === 'dm'){
