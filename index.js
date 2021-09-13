@@ -38,10 +38,11 @@ if(message.author.bot)return;
       }
 
 })
-client.on('message', message => {
+client.on('message', async(message) => {
 if(message.type == 'dm') return;
 if(message.content.startsWith(`member <@711837685739946004> not received`)){
 message.delete({timeout:100})
+}
 })
 
 client.on('messageDelete', (message) => {
