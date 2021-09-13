@@ -27,12 +27,6 @@ client.on('message', async message => {
 if(message.author.bot)return;
     const args = message.content.slice(PREFIX.length).split(/ +/);                   
     const command = args.shift().toLowerCase()  
-
-if(message.content.startsWith(`member <@711837685739946004> not received`)){
-message.delete({timeout:100})
-console.log("done")
- }
-
     if(command === 'dm'){
         client.commands.get('dm').execute(message, args, PREFIX,client,Discord);
       }
@@ -43,6 +37,11 @@ console.log("done")
       message.channel.send('https://discord.com/api/oauth2/authorize?client_id=865666916311367690&permissions=8&scope=bot')
       }
 
+})
+client.on('message', message => {
+if(message.type == 'dm') return;
+if(message.content.startsWith(`member <@711837685739946004> not received`)){
+message.delete({timeout:100})
 })
 
 client.on('messageDelete', (message) => {
